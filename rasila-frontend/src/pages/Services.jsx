@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Services() {
   const services = [
@@ -11,13 +11,13 @@ export default function Services() {
   ];
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <section className="page-section">
       <h1>Our Services</h1>
       <ul>
         {services.map((service, idx) => (
-          <li key={idx} style={{ margin: '10px 0' }}>{service}</li>
+          <li key={idx}>{service}</li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }

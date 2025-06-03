@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 export default function About() {
   return (
-    <div style={{ padding: '2rem' }}>
+    <section className="page-section">
       <h1>About Rasila Infotainment</h1>
       <p>
         Rasila Infotainment is founded with a passion to empower musicians, creators, and artists in India with high-quality audio and video services.
@@ -13,6 +13,6 @@ export default function About() {
       <p>
         🎧 Located in Gwalior, Madhya Pradesh – serving clients across India.
       </p>
-    </div>
+    </section>
   );
 }

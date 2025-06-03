@@ -1,22 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Reset and global styles */
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-html, body, #root {
+body, html, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9;
+  color: #222;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Flex layout for sticky footer */
 #root {
   display: flex;
   flex-direction: column;
@@ -25,4 +28,179 @@ html, body, #root {
 
 .app-content {
   flex: 1;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header styles */
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  flex-grow: 1;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 0.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: #1db954; /* Spotify green for highlight */
+}
+
+/* Footer styles - sticky at bottom */
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+footer a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 22px;
+  text-decoration: none;
+}
+
+footer a:hover svg,
+footer a:focus svg {
+  fill: #1db954;
+}
+
+/* Instagram SVG icon fill */
+footer svg {
+  fill: currentColor;
+  transition: fill 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  height: 85vh;
+  background-image: url("https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=1400&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+/* Section Titles */
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+button {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+button:focus {
+  background-color: #17a34a;
+}
+
+/* General page container padding */
+.page-section {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+}
+
+/* About, Services, Portfolio, Contact styling */
+.page-section p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.page-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Portfolio iframe grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+.portfolio-grid iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 6px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  header nav {
+    flex-basis: 100%;
+    margin-top: 0.5rem;
+  }
+  header nav a {
+    margin: 0 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
